@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'test', to: "static_pages#test"
+  root 'static_pages#home'
+
   get 'static_pages/home'
 
   get 'static_pages/test'
