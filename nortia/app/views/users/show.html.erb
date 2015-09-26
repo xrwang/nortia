@@ -1,8 +1,10 @@
 <h1>Users#show</h1>
 <p>Find me in app/views/users/show.html.erb</p>
-<li><%=current_user.name%></li>
-<li><%=current_user.username%></li>
+<%=image_tag(current_user.image_url, class: 'img-thumbnail img-responsive')  %>
 
-<li><%=current_user.email%></li>
-<li><%=current_user.zipcode%></li>
-<li><%=current_user.age%></li>
+<li>Name <%=current_user.name%></li>
+<li>Username <%=current_user.username%></li>
+
+<li>Email <%=current_user.email%></li>
+<li>Location <%=current_user.zipcode%></li>
+<li>Age <%=current_user.age%></li>

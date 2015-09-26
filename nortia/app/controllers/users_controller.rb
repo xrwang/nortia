@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    Rails.logger.debug user_params
+    Rails.logger.debug
     if current_user.update!(user_params)
       redirect_to show_profile_path
     else
@@ -26,6 +26,6 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name, :zipcode, :username, :email, :age)
+      params.require(:user).permit(:name, :zipcode, :username, :email, :age, :image_url)
     end
 end

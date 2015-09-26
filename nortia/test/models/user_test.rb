@@ -18,6 +18,7 @@
 #  oauth_token      :string
 #  oauth_expires_at :datetime
 #  email            :string
+#  image_url        :string
 #
 
 require 'test_helper'
