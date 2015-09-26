@@ -11,8 +11,21 @@
 #  availability  :string
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
+#  password      :digest
 #
 
 class User < ActiveRecord::Base
   has_many :skills, dependent: :destroy
+  has_one :wallet
+
+  def self.from_omniauth(auth)
+    User.where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      user.save!
+    end
+  end
 end
