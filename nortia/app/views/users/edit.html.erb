@@ -1,0 +1,16 @@
+Your profile
+
+<%=current_user.name%>
+<%=current_user.email%>
+
+
+<div class="panel-body">
+      <%=simple_form_for current_user, url: user_update_path do |f|%>
+      <%=f.input :name%>
+      <%=f.input :email%>
+      <%=f.input :username%>
+      <%=f.input :zipcode%>
+      <%=f.input :age%>
+      <%= f.submit "Save".html_safe, class: "btn btn-lg"%>
+      <%end%>
+</div>

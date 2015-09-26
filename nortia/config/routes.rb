@@ -1,22 +1,34 @@
 Rails.application.routes.draw do
-  get 'skills/show'
+  # resources :users
+  patch 'user/update', to: 'users#update'
+  get 'user/show', to: 'users#show', as: 'show_profile'
 
-  get 'skills/index'
 
-  get 'test', to: "static_pages#test"
+  # get 'skills/show'
+  #
+  # get 'skills/index'
+  #
+  # get 'test', to: "static_pages#test"
   root 'static_pages#home'
+  #
+  # get 'static_pages/home'
+  #
+  # get 'static_pages/test'
+  #
+  # get 'users/index'
+  #
+  # get 'users/show'
+  #
+  # get 'user/index'
+  #
+  # get 'user/show'
 
-  get 'static_pages/home'
+  # get 'editprofile', to: 'users#edit', as: 'dongle'
+  #above way means: edit profile goes to users/edit, but is referenced as dongle in the code
+  #ie it would be dongle_path not editprofile_path
 
-  get 'static_pages/test'
+  get 'user/edit', to: 'users#edit', as: 'edit_profile'
 
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'user/index'
-
-  get 'user/show'
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
@@ -36,7 +48,6 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
   # Example resource route with options:
   #   resources :products do
   #     member do
