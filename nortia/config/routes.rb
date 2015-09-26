@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'skills/show'
+
+  get 'skills/index'
+
   get 'test', to: "static_pages#test"
   root 'static_pages#home'
 

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  balance: 1
+  credit: 1
+  debit: 1
+  last_used: 2015-09-23
+
+two:
+  balance: 1
+  credit: 1
+  debit: 1
+  last_used: 2015-09-23
