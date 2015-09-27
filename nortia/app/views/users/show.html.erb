@@ -1,5 +1,5 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1>Welcome <%=current_user.name%> !</h1>
+<!-- <p>Find me in app/views/users/show.html.erb</p> -->
 <%=image_tag(current_user.image_url, class: 'img-thumbnail img-responsive')  %>
 
 <li>Name <%=current_user.name%></li>
@@ -8,3 +8,12 @@
 <li>Email <%=current_user.email%></li>
 <li>Location <%=current_user.zipcode%></li>
 <li>Age <%=current_user.age%></li>
+<%= link_to 'Edit my profile', edit_user_path(current_user), class: "btn btn-md btn-primary"%>
+
+
+
+
+<h2>Skills I have</h2>
+<%@skills.each do |skill|%>
+  <li><%=skill.maincat%>
+<%end%>

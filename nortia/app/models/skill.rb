@@ -12,6 +12,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  imageurl   :string
+#  user_id    :integer
 #
 
 class Skill < ActiveRecord::Base

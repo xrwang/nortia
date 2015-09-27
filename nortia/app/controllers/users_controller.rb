@@ -5,8 +5,6 @@ class UsersController < ApplicationController
   def new
   end
 
-  def edit
-  end
 
   def update
     Rails.logger.debug
@@ -20,6 +18,7 @@ class UsersController < ApplicationController
 
 
   def show
+    @skills = current_user.skills
 
   end
 
@@ -27,5 +26,9 @@ class UsersController < ApplicationController
   private
     def user_params
       params.require(:user).permit(:name, :zipcode, :username, :email, :age, :image_url)
+    end
+
+    def get_skill
+      Skill.find(params[:id])
     end
 end

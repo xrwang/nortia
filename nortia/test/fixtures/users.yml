@@ -19,6 +19,7 @@
 #  oauth_expires_at :datetime
 #  email            :string
 #  image_url        :string
+#  user_id          :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

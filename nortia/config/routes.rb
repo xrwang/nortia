@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   # resources :users
+
+resources :users do
+  resources :skills
+end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
+
 
 
   # get 'skills/show'
@@ -28,6 +33,7 @@ Rails.application.routes.draw do
   #ie it would be dongle_path not editprofile_path
 
   get 'user/edit', to: 'users#edit', as: 'edit_profile'
+
 
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]

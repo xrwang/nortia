@@ -1,0 +1,6 @@
+New skill
+<%=simple_form_for ([current_user, current_user.skills.build]), url: do |f|%>
+<%=f.input :maincat%>
+<%=f.input :subcat%>
+<%=f.input :experience, as: :integer%>
+<%end%>

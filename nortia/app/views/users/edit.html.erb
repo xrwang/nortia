@@ -13,4 +13,15 @@ Your profile
       <%=f.input :age%>
       <%= f.submit "Save".html_safe, class: "btn btn-lg"%>
       <%end%>
-</div>
+    </div>
+
+
+
+  <div class="panel-body">
+    <%current_user.skills.each do |skill|%>
+    <li><%=skill.maincat%>
+      <%=skill.created_at%>
+      <%=skill.updated_at%>
+      <%=link_to 'Edit', edit_user_skill_path(skill, current_user), class: 'btn btn-success btn-xs'%></li>
+    <%end%>
+  </div>

@@ -19,6 +19,7 @@
 #  oauth_expires_at :datetime
 #  email            :string
 #  image_url        :string
+#  user_id          :integer
 #
 
 require 'test_helper'
