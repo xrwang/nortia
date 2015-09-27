@@ -1,6 +1,29 @@
 New skill
-<%=simple_form_for ([current_user, current_user.skills.build]), url: do |f|%>
-<%=f.input :maincat%>
-<%=f.input :subcat%>
+
+<div class="panel-body">
+<%=simple_form_for ([current_user, current_user.skills.build]) do |f|%>
+<%=f.input :maincat, label:'category', :collection => ['beauty services',
+'automotive repair',
+'computer',
+'creative',
+'childcare',
+'bicycle',
+'event planning & help',
+'farm&garden skills',
+'financial skills',
+'food&household help',
+'labor/moving help',
+'legal skills',
+'lessons skills',
+'professional development',
+'pet care',
+'real estate skills',
+'skilld trade skills',
+'therapeutic skills',
+'travel, vacation & tours',
+'writing, editing & translation']%>
+<%=f.input :subcat, label: 'description', placeholder: 'describe your skills here, i.e. I have 3 years of experience as a doula', as: :text%>
 <%=f.input :experience, as: :integer%>
+<%=f.button :submit%>
 <%end%>
+</div>

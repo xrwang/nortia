@@ -6,7 +6,7 @@ class SkillsController < ApplicationController
   end
 
   def new
-
+    @skill = Skill.new
   end
 
   def create
@@ -32,7 +32,7 @@ class SkillsController < ApplicationController
 
 private
 def skill_params
-  params.require(:skill).permit(:maincat,:subcat,:experience)
+  params.require(:skill).permit(:maincat, :subcat, :experience)
 end
 
 def get_skill

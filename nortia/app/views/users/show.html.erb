@@ -1,5 +1,7 @@
 <h1>Welcome <%=current_user.name%> !</h1>
 <!-- <p>Find me in app/views/users/show.html.erb</p> -->
+<div class="panel-body">
+
 <%=image_tag(current_user.image_url, class: 'img-thumbnail img-responsive')  %>
 
 <li>Name <%=current_user.name%></li>
@@ -10,10 +12,14 @@
 <li>Age <%=current_user.age%></li>
 <%= link_to 'Edit my profile', edit_user_path(current_user), class: "btn btn-md btn-primary"%>
 
+</div>
 
-
+<div class="panel-body">
 
 <h2>Skills I have</h2>
 <%@skills.each do |skill|%>
-  <li><%=skill.maincat%>
+  <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(skill, current_user), class: "btn btn-sm btn-default"%>
 <%end%>
+<br>
+<%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-md btn-primary"%>
+</div>
