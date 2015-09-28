@@ -1,0 +1,5 @@
+<%=link_to 'Edit', edit_user_skill_path(current_user.skill.user_id,skill), class: 'btn btn-success btn-xs'%></li>
+</li>
+
+
+<%= link_to 'Add new skill', new_user_skill_path, class: "btn btn-md btn-primary"%>

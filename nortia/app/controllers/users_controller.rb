@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def show
     @skills = current_user.skills
-
   end
 
 
