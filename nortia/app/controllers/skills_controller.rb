@@ -20,7 +20,7 @@ class SkillsController < ApplicationController
 
   def update
     @skill = get_skill
-    if current_user.skills.update!(skill_params)
+    if @skill.update!(skill_params)
       redirect_to show_profile_path
     else
       render 'edit'

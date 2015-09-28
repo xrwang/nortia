@@ -1,3 +1,30 @@
 Edit your skill here
 Skill id<%=@skill.id%><br>
 Belongs to user <%=@skill.user_id%>
+<%=@skill.maincat%>
+<%=@skill.subcat%>
+
+<%=simple_form_for @skill, url: user_skill_path(current_user, @skill), method: :patch do |f|%>
+<%=f.input :maincat, label:'category', :selected => selected_maincat,
+:collection => ['beauty services',
+'automotive repair',
+'computer',
+'creative',
+'childcare',
+'bicycle',
+'event planning & help',
+'farm&garden skills',
+'financial skills',
+'food&household help',
+'labor/moving help',
+'legal skills',
+'lessons skills',
+'professional development',
+'pet care',
+'real estate skills',
+'skilld trade skills',
+'therapeutic skills',
+'travel, vacation & tours',
+'writing, editing & translation']%>
+  <%= f.submit %>
+<%end%>

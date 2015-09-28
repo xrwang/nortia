@@ -8,7 +8,6 @@ end
   get 'user/show', to: 'users#show', as: 'show_profile'
 
 
-
   # get 'skills/show'
   #
   # get 'skills/index'

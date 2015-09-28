@@ -18,7 +18,7 @@
 
 <h2>Skills I have</h2>
 <%@skills.each do |skill|%>
-  <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(skill, current_user), class: "btn btn-sm btn-default"%>
+  <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(current_user, skill), class: "btn btn-sm btn-default"%>
 <%end%>
 <br>
 <%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-md btn-primary"%>
