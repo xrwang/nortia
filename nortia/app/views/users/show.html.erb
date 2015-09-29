@@ -1,25 +1,28 @@
-<h1>Welcome <%=current_user.name%> !</h1>
+<div class="panel-heading">
+  <h1>Hey <%=current_user.name%>! You're lookin' good today!</h1></div>
 <!-- <p>Find me in app/views/users/show.html.erb</p> -->
+
 <div class="panel-body">
+  <%=image_tag(current_user.image_url, class: 'img-thumbnail img-responsive')  %>
 
-<%=image_tag(current_user.image_url, class: 'img-thumbnail img-responsive')  %>
+  <li>Name <%=current_user.name%></li>
+  <li>Username <%=current_user.username%></li>
 
-<li>Name <%=current_user.name%></li>
-<li>Username <%=current_user.username%></li>
-
-<li>Email <%=current_user.email%></li>
-<li>Location <%=current_user.zipcode%></li>
-<li>Age <%=current_user.age%></li>
+  <li>Email <%=current_user.email%></li>
+  <li>Location <%=current_user.zipcode%></li>
+  <li>Age <%=current_user.age%></li>
 <%= link_to 'Edit my profile', edit_user_path(current_user), class: "btn btn-md btn-primary"%>
 
 </div>
 
-<div class="panel-body">
 
-<h2>Skills I have</h2>
-<%@skills.each do |skill|%>
-  <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(current_user, skill), class: "btn btn-sm btn-default"%>
-<%end%>
-<br>
-<%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-md btn-primary"%>
+  <div class="panel-heading">
+    <h2>Skills I have</h2>
+  </div>
+<div class="panel-body">
+  <%@skills.each do |skill|%>
+    <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(current_user, skill), class: "btn btn-sm btn-default"%>
+  <%end%>
+  <br>
+  <%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-sm btn-primary"%>
 </div>

@@ -5,7 +5,7 @@ Belongs to user <%=@skill.user_id%>
 <%=@skill.subcat%>
 
 <%=simple_form_for @skill, url: user_skill_path(current_user, @skill), method: :patch do |f|%>
-<%=f.input :maincat, label:'category', :selected => selected_maincat,
+<%=f.input :maincat, label:'category', :selected => @skill.maincat,
 :collection => ['beauty services',
 'automotive repair',
 'computer',
@@ -26,5 +26,8 @@ Belongs to user <%=@skill.user_id%>
 'therapeutic skills',
 'travel, vacation & tours',
 'writing, editing & translation']%>
-  <%= f.submit %>
+<%=f.input :subcat%>
+
+
+<%= f.submit "update", class:"btn btn-md btn-primary" %>
 <%end%>
