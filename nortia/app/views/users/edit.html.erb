@@ -11,6 +11,7 @@ Your profile
       <%=f.input :username, :label => "Username (not editable)", :readonly => false%>
       <%=f.input :zipcode%>
       <%=f.input :age%>
+      <%= f.input :availability, as: :check_boxes, collection: [['Sunday', 'Sunday'],['Monday', 'Monday'],['Tuesday', 'Tuesday'], ['Wednesday', 'Wednesday'], ['Thursday', 'Thursday'], ['Friday', 'Friday'], ['Saturday', 'Saturday']]%>
       <%= f.submit "Save".html_safe, class: "btn btn-lg"%>
       <%end%>
     </div>
