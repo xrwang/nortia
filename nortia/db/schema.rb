@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150927011732) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "skills", force: :cascade do |t|
     t.string   "maincat"
     t.string   "subcat"
@@ -22,14 +25,29 @@ ActiveRecord::Schema.define(version: 20150927011732) do
     t.boolean  "offer"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "imageurl"
+    t.string   "image_url"
     t.integer  "user_id"
   end
 
-  add_index "skills", ["user_id"], name: "index_skills_on_user_id"
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
 
-# Could not dump table "users" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "users", force: :cascade do |t|
+    t.float    "location_long"
+    t.float    "location_lat"
+    t.integer  "zipcode"
+    t.string   "username"
+    t.integer  "age"
+    t.string   "availability"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "email"
+    t.string   "image_url"
+  end
 
   create_table "wallets", force: :cascade do |t|
     t.integer  "balance"
