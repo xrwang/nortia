@@ -11,7 +11,7 @@
 #  offer      :boolean
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  imageurl   :string
+#  image_url  :string
 #  user_id    :integer
 #
 

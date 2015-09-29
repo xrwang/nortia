@@ -8,10 +8,8 @@
 #  zipcode          :integer
 #  username         :string
 #  age              :integer
-#  availability     :string
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
-#  password         :digest
 #  provider         :string
 #  uid              :string
 #  name             :string
@@ -19,7 +17,7 @@
 #  oauth_expires_at :datetime
 #  email            :string
 #  image_url        :string
-#  user_id          :integer
+#  availability     :text             default([]), is an Array
 #
 
 class User < ActiveRecord::Base
