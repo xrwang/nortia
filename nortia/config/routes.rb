@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'wallet/new'
+
+  get 'wallet/index'
+
+  get 'wallet/show'
+
   # resources :users
 
 resources :users do
