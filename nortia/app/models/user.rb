@@ -22,11 +22,14 @@
 require 'zipcode_finder'
 
 class User < ActiveRecord::Base
-  before_save 'set_long_lat'
-
   has_many :skills, dependent: :destroy
   has_many :vibes, dependent: :destroy
   has_one :wallet
+
+  # has_many :generated_coupons, class_name: "Coupon", foreign_key: :generated_by_user_id
+  # has_many :cashed_coupons, class_name: "Coupon", foreign_key: :cashed_by_user_id
+
+  before_save 'set_long_lat'
 
   def self.from_omniauth(auth)
     Rails.logger.debug auth
@@ -42,11 +45,8 @@ class User < ActiveRecord::Base
     end
   end
 
-
   def set_long_lat
-    api = ZipcodeLocation.new
-    api.get_long
-    self.location_long = api.get_long
+    api = ZipcodeLocation.new(zipcode)
+    self.location_long, self.location_lat = api.get_long_lat
   end
-  
 end
