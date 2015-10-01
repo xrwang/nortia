@@ -10,12 +10,21 @@
     <div class="span3 centering text-center">
         <div class="row-fluid">
           <%=image_tag(current_user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
+          <div class="row-fluid">
+            Chaching! You've got
+            <%=@vibes.each do |vibe|%>
+            <%=@vibe%>
+            <%end%>
+          </div>
+
             <div class="row-fluid">
             <li>Name <%=current_user.name%></li>
             <li>Username <%=current_user.username%></li>
 
             <li>Email <%=current_user.email%></li>
             <li>Location <%=current_user.zipcode%></li>
+            <li>Location <%=current_user.location_long%></li>
+
             <li>Age <%=current_user.age%></li>
             </div>
 

@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  get 'vibes/show'
+
+  get 'vibes/index'
+
+  get 'vibes/test'
+
+  get 'vibe/index'
+
+  get 'vibe/test'
+
   # resources :users
 
 resources :users do

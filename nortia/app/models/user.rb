@@ -19,9 +19,13 @@
 #  image_url        :string
 #  availability     :text             default([]), is an Array
 #
+require 'zipcode_finder'
 
 class User < ActiveRecord::Base
+  before_save 'set_long_lat'
+
   has_many :skills, dependent: :destroy
+  has_many :vibes, dependent: :destroy
   has_one :wallet
 
   def self.from_omniauth(auth)
@@ -37,4 +41,12 @@ class User < ActiveRecord::Base
       user.save!
     end
   end
+
+
+  def set_long_lat
+    api = ZipcodeLocation.new
+    api.get_long
+    self.location_long = api.get_long
+  end
+  
 end

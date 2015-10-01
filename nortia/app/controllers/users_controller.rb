@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @skills = current_user.skills
+    @vibes = current_user.vibes
   end
 
 

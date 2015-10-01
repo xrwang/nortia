@@ -13,7 +13,7 @@ default: &default
 development:
   <<: *default
   database: nortia_development
-  username: xiaoweirwang
+  username: xiaoweiwang1
   password:
 
 # Warning: The database defined as "test" will be erased and
@@ -22,7 +22,7 @@ development:
 test:
   <<: *default
   database: nortia_test
-  username: xiaoweirwang
+  username: xiaoweiwang1
   password:
 
 
