@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151001025544) do
+ActiveRecord::Schema.define(version: 20151003061420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,16 @@ ActiveRecord::Schema.define(version: 20151001025544) do
     t.text     "availability",     default: [],              array: true
   end
 
+  create_table "vibe_codes", force: :cascade do |t|
+    t.integer  "giver_wallet_id"
+    t.string   "code"
+    t.integer  "credit_equiv"
+    t.boolean  "cashed"
+    t.integer  "receiver_wallet_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
   create_table "vibes", force: :cascade do |t|
     t.string   "credit_code"
     t.text     "description"
@@ -65,6 +75,7 @@ ActiveRecord::Schema.define(version: 20151001025544) do
     t.date     "last_used"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
 end

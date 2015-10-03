@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'vibe_codes/test'
+
+  get 'vibe_codes/new'
+
+  get 'vibe_codes/index'
+
   get 'vibes/show'
 
   get 'vibes/index'

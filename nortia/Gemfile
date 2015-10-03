@@ -30,6 +30,10 @@ gem 'omniauth-facebook', '~> 2.0'
 
 gem 'httparty'
 
+#generate some unique coupon codes
+gem 'coupon_code'
+
+
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
