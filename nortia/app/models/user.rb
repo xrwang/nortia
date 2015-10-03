@@ -30,6 +30,8 @@ class User < ActiveRecord::Base
   # has_many :cashed_coupons, class_name: "Coupon", foreign_key: :cashed_by_user_id
 
   before_save 'set_long_lat'
+  after_create 'new_wallet'
+
 
   def self.from_omniauth(auth)
     Rails.logger.debug auth
@@ -43,6 +45,12 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+  end
+
+private
+
+  def create_wallet
+    Wallet.create(user_id: id) if wallet.nil?
   end
 
   def set_long_lat

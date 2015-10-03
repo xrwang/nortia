@@ -11,8 +11,16 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #
-require 'vibe_code_generator'
 
 class VibeCode < ActiveRecord::Base
-  belongs_to :wallet, dependent: :destroy
+
+  belongs_to :giver_wallet, :foreign_key => "giver_wallet_id", :class_name => "Wallet", dependent: :destroy
+  belongs_to :receiver_wallet, :foreign_key => "receiver_wallet_id", :class_name => "Wallet", dependent: :destroy
+
+  before_create 'vibe_code_generator'
+
+  def vibe_code_generator
+    self.code = CouponCode.generate
+  end
+
 end

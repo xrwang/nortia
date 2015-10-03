@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # resources :users
 
 resources :users do
+  resources :wallet do
+    resources :vibe_codes
+  end
   resources :skills
 end
   patch 'user/update', to: 'users#update'
