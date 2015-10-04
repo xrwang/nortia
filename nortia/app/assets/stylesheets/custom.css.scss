@@ -1,11 +1,15 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-
-
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,300,100italic,100,300italic,700,700italic,900);
 
 .center {
      float: none !important;
      margin-left: auto !important;
      margin-right: auto !important;
+}
+
+.anonymous_pro {
+  font-family: 'Anonymous Pro', sans-serif;
 }

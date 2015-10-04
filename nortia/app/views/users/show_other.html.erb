@@ -1,34 +1,28 @@
 
 <section id = "page-top">
-<h1>Users#showother</h1>
-<p>Find me in app/views/users/show_other.html.erb</p>
-<%=@user%>
-<%=@user.name%>
-
+<!-- <h1>Users#showother</h1>
+<p>Find me in app/views/users/show_other.html.erb</p> -->
 <div class="container-fluid col-md-8 col-md-offset-2">
     <div class= "row-fluid center-block">
 
       <div class="span1 centering text-center">
-          <h2><%=@user.name%>!</h2>
+          <h2><%=@user.name%></h2>
 
       <!-- <p>Find me in app/views/users/show.html.erb</p> -->
-
-
-
       <div class="span3 centering text-center">
           <div class="row-fluid">
             <%=image_tag(@user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
 
               <div class="row-fluid">
                 <ul>
-              <li>Name <%=@user.name%></li>
-              <li>Username <%=@user.username%></li>
+              <li><em>Name</em> <%=@user.name%></li>
+              <li><em>Username</em>  <%=@user.username%></li>
 
-              <li>Email <%=@user.email%></li>
-              <li>Location <%=@user.zipcode%></li>
-              <li>Age <%=@user.age%></li>
-              <li>Longitude <%=@user.location_long%></li>
-              <li>Latitude <%=@user.location_lat%></li>
+              <li><em>Email</em>  <%=@user.email%></li>
+              <li><em>Location</em> <%=@user.zipcode%></li>
+              <li><em>Age</em>  <%=@user.age%></li>
+              <li><em>Longitude</em>  <%=@user.location_long%></li>
+              <li><em>Latitude</em>  <%=@user.location_lat%></li>
                 </ul>
               </div>
 

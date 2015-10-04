@@ -15,7 +15,7 @@
           <%=image_tag(current_user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
 
           <div class="row-fluid">
-          <h4>Chaching! 💸 </h4>
+          <h4>Cha-ching! 💸 </h4>
           <h4>You've got <%=current_user.wallet.balance%> credits</h4>
           <%= link_to 'Generate a credit code', vibe_codes_new_path, class: "btn btn-sm btn-primary"%>
           <br>
@@ -24,14 +24,14 @@
 
             <div class="row-fluid">
               <ul>
-            <li>Name <%=current_user.name%></li>
-            <li>Username <%=current_user.username%></li>
+            <li><em>Name</em> <%=current_user.name%></li>
+            <li><em>Username</em>  <%=current_user.username%></li>
 
-            <li>Email <%=current_user.email%></li>
-            <li>Location <%=current_user.zipcode%></li>
-            <li>Age <%=current_user.age%></li>
-            <li>Longitude <%=current_user.location_long%></li>
-            <li>Latitude <%=current_user.location_lat%></li>
+            <li><em>Email</em>  <%=current_user.email%></li>
+            <li><em>Location</em>  <%=current_user.zipcode%></li>
+            <li><em>Age</em>  <%=current_user.age%></li>
+            <li><em>Longitude</em>  <%=current_user.location_long%></li>
+            <li><em>Latitude</em>  <%=current_user.location_lat%></li>
               </ul>
             </div>
 
