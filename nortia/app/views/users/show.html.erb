@@ -14,10 +14,9 @@
         <div class="row-fluid">
           <%=image_tag(current_user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
 
-          <div class="span1 centering text-center">
-              <h4> chaching! you have $$$$</h4>
+          <div class="row-fluid">
+          <h4>Chaching! You've got <%=current_user.wallet.balance%> credits</h4>
           </div>
-
 
             <div class="row-fluid">
             <li>Name <%=current_user.name%></li>
@@ -25,6 +24,10 @@
 
             <li>Email <%=current_user.email%></li>
             <li>Location <%=current_user.zipcode%></li>
+            <li>Longitude <%=current_user.location_long%></li>
+            <li>Latitude <%=current_user.location_lat%></li>
+
+
             <li>Age <%=current_user.age%></li>
             </div>
 

@@ -5,7 +5,6 @@
 #  id               :integer          not null, primary key
 #  location_long    :float
 #  location_lat     :float
-#  zipcode          :integer
 #  username         :string
 #  age              :integer
 #  created_at       :datetime         not null
@@ -18,11 +17,21 @@
 #  email            :string
 #  image_url        :string
 #  availability     :text             default([]), is an Array
+#  zipcode          :string
 #
+
+require 'zipcode_finder'
 
 class User < ActiveRecord::Base
   has_many :skills, dependent: :destroy
   has_one :wallet
+
+  # has_many :generated_coupons, class_name: "Coupon", foreign_key: :generated_by_user_id
+  # has_many :cashed_coupons, class_name: "Coupon", foreign_key: :cashed_by_user_id
+
+  before_save 'set_long_lat'
+  after_create 'create_wallet'
+
 
   def self.from_omniauth(auth)
     Rails.logger.debug auth
@@ -36,5 +45,16 @@ class User < ActiveRecord::Base
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
       user.save!
     end
+  end
+
+private
+
+  def create_wallet
+    Wallet.create(user_id: id) if wallet.nil?
+  end
+
+  def set_long_lat
+    api = ZipcodeLocation.new(zipcode)
+    self.location_long, self.location_lat = api.get_long_lat
   end
 end

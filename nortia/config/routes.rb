@@ -1,19 +1,33 @@
 Rails.application.routes.draw do
-  get 'wallet/new'
 
-  get 'wallet/index'
+  get 'vibe_codes/test'
 
-  get 'wallet/show'
+  get 'vibe_codes/new'
+
+  get 'vibe_codes/index'
+
+  get 'vibes/show'
+
+  get 'vibes/index'
+
+  get 'vibes/test'
+
+  get 'vibe/index'
+
+  get 'vibe/test'
 
   # resources :users
 
 resources :users do
+  resources :wallet do
+    resources :vibe_codes
+  end
   resources :skills
 end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
 
-
+  post 'vibes/redeem', to: 'vibe_codes#redeem'
   # get 'skills/show'
   #
   # get 'skills/index'
