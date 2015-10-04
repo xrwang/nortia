@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
   def index
+
   end
+
+  def show_other
+    @users = User.all
+    @user = User.find(params[:id])
+  end
+
 
   def new
   end
@@ -15,6 +22,8 @@ class UsersController < ApplicationController
     end
 
   end
+
+
 
 
   def show

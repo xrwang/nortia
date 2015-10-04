@@ -6,16 +6,6 @@ Rails.application.routes.draw do
 
   get 'vibe_codes/index'
 
-  get 'vibes/show'
-
-  get 'vibes/index'
-
-  get 'vibes/test'
-
-  get 'vibe/index'
-
-  get 'vibe/test'
-
   # resources :users
 
 resources :users do
@@ -26,6 +16,8 @@ resources :users do
 end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
+
+  get 'user/:id', to: 'users#show_other', as: 'show_other_profile'
 
   get 'skills/all/show', to: 'skills#index', as: 'skills_index'
 

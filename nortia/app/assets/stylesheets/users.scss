@@ -4,8 +4,10 @@
 
 
 
-li {
+ul, li {
   list-style-type: none;
+  padding-left:0 !important;
+
 }
 
 #profile-pic{

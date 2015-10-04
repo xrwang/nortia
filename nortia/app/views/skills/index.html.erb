@@ -8,7 +8,7 @@
     <h4><%=skill%></h4>
     <ul>
     <%users.compact.each do |user|%>
-      <li><%=user.name%></li>
+      <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
     <% end %>
   </ul>
     <br>
