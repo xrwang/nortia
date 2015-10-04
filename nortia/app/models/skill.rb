@@ -17,4 +17,26 @@
 
 class Skill < ActiveRecord::Base
   belongs_to :user, dependent: :destroy
+
+  MAINCATS = ['beauty services',
+  'automotive repair',
+  'computer',
+  'creative',
+  'childcare',
+  'bicycle',
+  'event planning & help',
+  'farm&garden skills',
+  'financial skills',
+  'food&household help',
+  'labor/moving help',
+  'legal skills',
+  'lessons skills',
+  'professional development',
+  'pet care',
+  'real estate skills',
+  'skilld trade skills',
+  'therapeutic skills',
+  'travel, vacation & tours',
+  'writing, editing & translation']
+
 end

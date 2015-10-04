@@ -4,7 +4,22 @@ class SkillsController < ApplicationController
 
   def index
     @users = User.all
-    @user = User.all.each
+    # @skill = get_skill
+    skills_maincats = Skill::MAINCATS
+    @skills_hash = {}
+    skills_maincats.each do |maincat|
+      @skills_hash[maincat] = Skill.where(:maincat => maincat).map do |skill|
+        skill.user
+      end
+    end
+    # get uniq list of all skill maincat's
+    # for each maincat, query for users who have skill matching cat
+    # build hash that looks like this:
+    # {
+    #   "babysitting" => nil,
+    #   "rockclimbing" => nil,
+    #   ...
+    # }
   end
 
   def new
