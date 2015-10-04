@@ -27,6 +27,8 @@ end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
 
+  get 'skills/all/show', to: 'skills#index', as: 'skills_index'
+
   post 'vibes/redeem', to: 'vibe_codes#redeem'
   # get 'skills/show'
   #

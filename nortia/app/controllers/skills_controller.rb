@@ -3,6 +3,8 @@ class SkillsController < ApplicationController
   end
 
   def index
+    @users = User.all
+    @user = User.all.each
   end
 
   def new
