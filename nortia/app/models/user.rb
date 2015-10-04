@@ -5,7 +5,6 @@
 #  id               :integer          not null, primary key
 #  location_long    :float
 #  location_lat     :float
-#  zipcode          :integer
 #  username         :string
 #  age              :integer
 #  created_at       :datetime         not null
@@ -18,19 +17,20 @@
 #  email            :string
 #  image_url        :string
 #  availability     :text             default([]), is an Array
+#  zipcode          :string
 #
+
 require 'zipcode_finder'
 
 class User < ActiveRecord::Base
   has_many :skills, dependent: :destroy
-  has_many :vibes, dependent: :destroy
   has_one :wallet
 
   # has_many :generated_coupons, class_name: "Coupon", foreign_key: :generated_by_user_id
   # has_many :cashed_coupons, class_name: "Coupon", foreign_key: :cashed_by_user_id
 
   before_save 'set_long_lat'
-  after_create 'new_wallet'
+  after_create 'create_wallet'
 
 
   def self.from_omniauth(auth)

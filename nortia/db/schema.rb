@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003061420) do
+ActiveRecord::Schema.define(version: 20151004004756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 20151003061420) do
   create_table "users", force: :cascade do |t|
     t.float    "location_long"
     t.float    "location_lat"
-    t.integer  "zipcode"
     t.string   "username"
     t.integer  "age"
     t.datetime "created_at",                    null: false
@@ -47,6 +46,7 @@ ActiveRecord::Schema.define(version: 20151003061420) do
     t.string   "email"
     t.string   "image_url"
     t.text     "availability",     default: [],              array: true
+    t.string   "zipcode"
   end
 
   create_table "vibe_codes", force: :cascade do |t|

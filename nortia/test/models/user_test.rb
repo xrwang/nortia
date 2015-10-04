@@ -5,7 +5,6 @@
 #  id               :integer          not null, primary key
 #  location_long    :float
 #  location_lat     :float
-#  zipcode          :integer
 #  username         :string
 #  age              :integer
 #  created_at       :datetime         not null
@@ -18,6 +17,7 @@
 #  email            :string
 #  image_url        :string
 #  availability     :text             default([]), is an Array
+#  zipcode          :string
 #
 
 require 'test_helper'

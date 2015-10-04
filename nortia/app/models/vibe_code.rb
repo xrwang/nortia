@@ -23,4 +23,5 @@ class VibeCode < ActiveRecord::Base
     self.code = CouponCode.generate
   end
 
+
 end
