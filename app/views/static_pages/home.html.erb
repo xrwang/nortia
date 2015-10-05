@@ -4,7 +4,11 @@
               <h1>Nortia</h1>
               <hr>
               <h3>Share your time with other women</h3>
-              <%=link_to "Login Now", show_profile_path, class: "btn btn-primary btn-xl"%>
+              <% if session[:user_id].nil? %>
+              <%=link_to "Login Now", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-xl"%>
+              <% else %>
+              <%=link_to "My Profile", show_profile_path, class: "btn btn-primary btn-xl"%>
+              <% end %>
           </div>
       </div>
   </header>

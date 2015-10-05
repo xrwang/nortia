@@ -18,18 +18,24 @@
               <li><em>Name</em> <%=@user.name%></li>
               <li><em>Username</em>  <%=@user.username%></li>
 
-              <li><em>Email</em>  <%=@user.email%></li>
-              <li><em>Location</em> <%=@user.zipcode%></li>
-              <li><em>Age</em>  <%=@user.age%></li>
-              <li><em>Longitude</em>  <%=@user.location_long%></li>
-              <li><em>Latitude</em>  <%=@user.location_lat%></li>
-                </ul>
-              </div>
+              <% if session[:user_id].nil? %>
+              <li>Please sign up to see this person's email, location and skills!</li>
 
-            <h2>General Availability</h2>
-              <li><%@user.availability.each do |day|%></li>
-            <li><%=day%></li>
-            <%end%>
+              <% else %>
+                <li><em>Email</em>  <%=@user.email%></li>
+                <li><em>Location</em> <%=@user.zipcode%></li>
+                <li><em>Age</em>  <%=@user.age%></li>
+                <li><em>Longitude</em>  <%=@user.location_long%></li>
+                <li><em>Latitude</em>  <%=@user.location_lat%></li>
+                </ul>
+                </div>
+
+                <h2>General Availability</h2>
+                <li><%@user.availability.each do |day|%></li>
+                <li><%=day%></li>
+                <%end%>
+
+              <%end%>
           </div>
       </div>
   </div>
