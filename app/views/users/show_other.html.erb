@@ -47,9 +47,14 @@
         </div>
 
         <div class="row-fluid center-block">
+          <ul>
           <%@user.skills.each do |skill|%>
-            <li><%=skill.maincat%></li>
+            <li>
+              <li><h4><%=skill.maincat%></h4></li>
+              <li>She says: "<%=skill.subcat%>"</li>
+            </li>
           <%end%>
+          </ul>
           <br>
         </div>
     </div>

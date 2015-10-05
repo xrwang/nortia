@@ -1,12 +1,15 @@
 <section id = "page-top">
-New skill
+  <div class = "container-fluid col-xs-12 col-lg-8">
 
-<div class="panel-body">
-<%=simple_form_for ([current_user, current_user.skills.build]) do |f|%>
-<%=f.input :maincat, label:'category', :collection => Skill::MAINCATS %>
-<%=f.input :subcat, label: 'description', placeholder: 'describe your skills here, i.e. I have 3 years of experience as a doula', as: :text%>
-<%=f.input :experience, as: :integer%>
-<%=f.button :submit%>
-<%end%>
-</div>
+  <div class = "panel-heading"><h3>New skill</h3></div>
+
+    <div class="panel-body">
+    <%=simple_form_for ([current_user, current_user.skills.build]) do |f|%>
+    <%=f.input :maincat, label:'category', :collection => Skill::MAINCATS %>
+    <%=f.input :subcat, label: 'description', placeholder: 'describe your skills here, i.e. I have 3 years of experience as a doula', as: :text%>
+    <%=f.input :experience, label: 'years of experience', as: :integer%>
+    <%=f.button :submit%>
+    <%end%>
+    </div>
+  </div>
 </section>
