@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: wallets
+#
+#  id         :integer          not null, primary key
+#  balance    :integer
+#  credit     :integer
+#  debit      :integer
+#  last_used  :date
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  user_id    :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  balance: 1
+  credit: 1
+  debit: 1
+  last_used: 2015-09-23
+
+two:
+  balance: 1
+  credit: 1
+  debit: 1
+  last_used: 2015-09-23

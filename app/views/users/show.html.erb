@@ -1,0 +1,62 @@
+<section id = "page-top">
+<div class="container-fluid col-md-8 col-md-offset-2">
+  <div class= "row-fluid center-block">
+
+    <div class="span1 centering text-center">
+        <h2>Hey <%=current_user.name%>!</h2>
+        <h2>You're lookin' good today!</h2>
+    </div>
+    <!-- <p>Find me in app/views/users/show.html.erb</p> -->
+
+
+
+    <div class="span3 centering text-center">
+        <div class="row-fluid">
+          <%=image_tag(current_user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
+
+          <div class="row-fluid">
+          <h4>Cha-ching! 💸 </h4>
+          <h4>You've got <%=current_user.wallet.balance%> credits</h4>
+          <%= link_to 'Generate a credit code', vibe_codes_new_path, class: "btn btn-sm btn-primary"%>
+          <br>
+          <%= link_to 'Redeem a credit code', vibe_codes_test_path, class: "btn btn-sm btn-default"%>
+          </div>
+
+            <div class="row-fluid">
+              <ul>
+            <li><em>Name</em> <%=current_user.name%></li>
+            <li><em>Username</em>  <%=current_user.username%></li>
+
+            <li><em>Email</em>  <%=current_user.email%></li>
+            <li><em>Location</em>  <%=current_user.zipcode%></li>
+            <li><em>Age</em>  <%=current_user.age%></li>
+            <li><em>Longitude</em>  <%=current_user.location_long%></li>
+            <li><em>Latitude</em>  <%=current_user.location_lat%></li>
+              </ul>
+            </div>
+
+          <h2>General Availability</h2>
+            <li><%current_user.availability.each do |day|%></li>
+          <li><%=day%></li>
+          <%end%>
+          <%= link_to 'Edit my profile & Availability', edit_user_path(current_user), class: "btn btn-md btn-primary"%>
+        </div>
+    </div>
+</div>
+
+
+  <div class="span3 centering text-center">
+      <div class= "row-fluid center-block">
+          <h2>Skills I have</h2>
+      </div>
+
+      <div class="row-fluid center-block">
+        <%@skills.each do |skill|%>
+          <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(current_user, skill), class: "btn btn-sm btn-default"%>
+        <%end%>
+        <br>
+        <%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-sm btn-primary"%>
+      </div>
+  </div>
+</div>
+</section>
