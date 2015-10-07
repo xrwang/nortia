@@ -12,14 +12,6 @@ class SkillsController < ApplicationController
         skill.user
       end
     end
-    # get uniq list of all skill maincat's
-    # for each maincat, query for users who have skill matching cat
-    # build hash that looks like this:
-    # {
-    #   "babysitting" => nil,
-    #   "rockclimbing" => nil,
-    #   ...
-    # }
   end
 
   def new

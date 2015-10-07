@@ -1,23 +1,26 @@
 <section id = "page-top">
 
-New vibe code test
+<div class = "container-fluid col-xs-12 col-lg-8">
+  <h4>Pass on some credits for work well done</h4>
 
-<div class="panel-body">
-  <li>User ID: <%=current_user.name%>'s wallet</li>
 
-<%=simple_form_for [current_user, current_user.wallet.generated_coupons.build], url: user_wallet_vibe_codes_path(current_user,current_user.wallet) do |f|%>
-<%current_user.wallet.generated_coupons.each do |vibe_code| %>
-<li>Wallet Id <%=vibe_code.giver_wallet_id%></li>
-<li><%=vibe_code.code%></li>
-<li>equal to hours: <%=vibe_code.credit_equiv%></li>
-<li>Cashed? <%=vibe_code.cashed?%></li>
-<br>
-<%end%>
-<br>
-<%#=f.input :code, label: 'code', as: :text%>
-<%=f.input :credit_equiv, as: :integer%>
-<%=f.button :submit%>
-<%end%>
+  <div class="panel-body">
+  <h4><%=current_user.name%>'s wallet</h4>
+
+  <ul>
+  <%=simple_form_for [current_user, current_user.wallet.generated_coupons.build], url: user_wallet_vibe_codes_path(current_user,current_user.wallet) do |f|%>
+  <%current_user.wallet.generated_coupons.each do |vibe_code| %>
+  <li><%=vibe_code.code%></li>
+  <li>equal to hours: <%=vibe_code.credit_equiv%></li>
+  <li>Cashed? <%=vibe_code.cashed?%></li>
+  <br>
+  <%end%>
+  </ul>
+  <br>
+  <%#=f.input :code, label: 'code', as: :text%>
+  <%=f.input :credit_equiv, as: :integer%>
+  <%=f.button :submit, 'Create a code'%>
+  <%end%>
+  </div>
 </div>
-
 </section>
