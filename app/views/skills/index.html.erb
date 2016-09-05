@@ -1,0 +1,18 @@
+<section id = "page-top">
+  <div class = "container-fluid col-xs-12 col-lg-8">
+    <!-- <h1>Skills#index</h1>
+    <p>Find me in app/views/skills/index.html.erb</p>
+    <br> -->
+    <h2>Skills Available</h2>
+    <br>
+    <%@skills_hash.each do |skill, users| %>
+        <h4><%=skill%></h4>
+        <ul>
+        <%users.compact.each do |user|%>
+          <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
+        <% end %>
+      </ul>
+        <br>
+    <% end %>
+  </div>
+</section>
