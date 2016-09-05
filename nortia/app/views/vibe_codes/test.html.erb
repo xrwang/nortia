@@ -1,13 +1,14 @@
 <section id = "page-top">
-<h1>VibeCodes#test_validating</h1>
-<p>Find me in app/views/vibe_codes/test.html.erb</p>
 
 
-TESTING REdemption
+<div class = "container-fluid col-xs-12 col-lg-8">
+
+<h3>Redeem your credits here. Enter the code you were given and go back to your profile page to see your credits appear.</h3>
 
 <%= form_tag vibes_redeem_path do %>
  <%= text_field_tag :code %>
  <%# f.input :cashed, as: :boolean, checked_value: true, unchecked_value: false %>
- <%=submit_tag%>
+ <%=submit_tag("Redeem", :class => "btn btn-sm btn-primary" ) %>
 <% end %>
+</div>
 </section>
