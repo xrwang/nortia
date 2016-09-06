@@ -32,10 +32,12 @@
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="/skills/all/show">Bbook</a>
+                    <a class="page-scroll" href="/skills/all/show">Where we are</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/user/show">My Profile</a>
+                    <% if current_user %>
+                    <a class="page-scroll" href="/user/show">My Account</a>
+                    <% end %>
                 </li>
                 <li>
                     <a class="page-scroll" href="/help">Help</a>

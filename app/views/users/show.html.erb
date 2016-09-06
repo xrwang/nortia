@@ -16,6 +16,7 @@
 
           <div class="row-fluid">
           <h4>Cha-ching! 💸 </h4>
+          <%=current_user.wallet%>
           <h4>You've got <%=current_user.wallet.balance%> credits</h4>
           <%= link_to 'Generate a credit code', vibe_codes_new_path, class: "btn btn-sm btn-primary"%>
           <br>
