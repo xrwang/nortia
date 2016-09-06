@@ -1,0 +1,19 @@
+
+<section id = "page-top">
+  <div class = "container-fluid col-xs-12 col-lg-8">
+
+    <div class = "panel-heading"><h3>Edit your skill here</h3></div>
+
+    <div class = "panel-body">
+    Skill id<%=@skill.id%><br>
+    Belongs to user <%=@skill.user_id%>
+    <%=@skill.maincat%>
+    <%=@skill.subcat%>
+    <%=simple_form_for @skill, url: user_skill_path(current_user, @skill), method: :patch do |f|%>
+    <%=f.input :maincat, label:'category', :selected => @skill.maincat, :collection => Skill::MAINCATS %>
+    <%=f.input :subcat, label: 'Describe your skills'%>
+    <%= f.submit "update", class:"btn btn-md btn-primary" %>
+    <%end%>
+    </div>
+  </div>
+</section>

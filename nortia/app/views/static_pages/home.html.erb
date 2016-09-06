@@ -1,0 +1,48 @@
+  <header>
+      <div class="header-content">
+          <div class="header-content-inner">
+              <h1>Nortia</h1>
+              <hr>
+              <h3>Empower each other</h3>
+              <% if session[:user_id].nil? %>
+              <%=link_to "Login Now", "/auth/facebook", id: "sign_in", class: "btn btn-primary btn-xl"%>
+              <% else %>
+              <%=link_to "My Profile", show_profile_path, class: "btn btn-primary btn-xl"%>
+              <% end %>
+          </div>
+      </div>
+  </header>
+
+  <section class="bg-primary" id="about">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <h2 class="section-heading">How it works</h2>
+                  <hr class="light">
+                  <h4>1. Sign up, list your skills<h4>
+                  <h4>2. Others can contact you and request your time<h4>
+                  <h4>3. After you finish a job for someone, they will give you a code where you can redeem for credits on Nortia.<h4>
+                  <h4>4. Use those same credits to request someone elses time for one of your own personal projects.<h4>
+                  <p class="text-faded"></p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section id="contact">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-lg-offset-2 text-center">
+                  <h2 class="section-heading">Get In Touch!</h2>
+                  <hr class="primary">
+                  <p>Contact us for help!</p>
+              </div>
+
+              <div class="col-lg-4 text-center">
+                  <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                  <p><a href="mailto:xiaoweirwang@gmail.com">xiaoweirwang [at] gmail</a></p>
+              </div>
+          </div>
+      </div>
+  </section>
