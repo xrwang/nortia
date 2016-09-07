@@ -4,13 +4,12 @@
     <div class= "row-fluid center-block">
         <h2>Post</h2>
     </div>
+    <li><h4>Title: <%=@post.title%></h4></li>
+    <li><h4>More Info: <%=@post.body%></h4></li>
+    <li><h4>Expires: <%=@post.expiration%></h4></li>
+    <li><h4>Contact: <%=@user.email%></h4></li>
 
-    <div class="row-fluid center-block">
-      <%@skills.each do |skill|%>
-        <li><%=skill.maincat%> <%=link_to 'Edit skill', edit_user_skill_path(current_user, skill), class: "btn btn-sm btn-default"%>
-      <%end%></li>
-      <br>
-      <%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-sm btn-primary"%>
-    </div>
+
+    <%=@post.id%>
   </div>
 </section>

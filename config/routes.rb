@@ -17,6 +17,7 @@ resources :users do
 end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
+  get 'user/:user_id/post/:post_id', to: 'posts#show', as: 'show_post'
 
   get 'user/:id', to: 'users#show_other', as: 'show_other_profile'
 

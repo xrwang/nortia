@@ -68,9 +68,10 @@
         <div class="row-fluid center-block">
           <ul>
           <%@user.posts.each do |post|%>
-            <li>
-              <li><h4><%=post.title%></h4></li>
+              <li><h4><%=post.title%></h4>
+              <%= link_to 'See More', show_post_path(@user.id, post.id), class: "btn btn-sm btn-primary"%>
             </li>
+            <br>
           <%end%>
           </ul>
           <br>
