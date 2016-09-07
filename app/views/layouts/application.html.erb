@@ -32,7 +32,7 @@
                 </li>
 
                 <li>
-                    <a class="page-scroll" href="/skills/all/show">Where we are</a>
+                    <a class="page-scroll" href="/skills/all/show">Listings</a>
                 </li>
                 <li>
                     <% if current_user %>
@@ -40,7 +40,7 @@
                     <% end %>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/help">Help</a>
+                  <%= link_to 'About', page_path('about') %>
                 </li>
                 <li><% if current_user %>
                 <%= link_to "Sign out", signout_path, id: "sign_out" %>

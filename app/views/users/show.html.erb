@@ -59,30 +59,17 @@
         <%= link_to 'Add new skill', new_user_skill_path(current_user), class: "btn btn-sm btn-primary"%>
       </div>
 
-
-
-    <h2>Add a post:</h2>
-    <%= form_for([current_user, current_user.posts.build]) do |f| %>
-      <p>
-        <%= f.text_field :title %>
-      </p>
-      <p>
-        <%= f.text_area :body %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
     <h2>My posts:</h2>
+    <%= link_to 'Add new post', new_user_post_path(current_user), class: "btn btn-sm btn-primary"%>
+
     <% current_user.posts.each do |post| %>
       <p>
-        <strong>title:</strong>
-        <%= post.title %>
-      </p>
-
-      <p>
-        <strong>body:</strong>
-        <%= post.body %>
+        <strong>title:</strong><br>
+        <%= post.title %><br>
+        <strong>body:</strong><br>
+        <%= post.body %><br>
+        <strong>need by date:</strong><br>
+        <%= post.expiration %><br>
       </p>
     <% end %>
   </div>

@@ -32,7 +32,8 @@ end
   #
   # get 'static_pages/home'
   #
-  # get 'static_pages/test'
+  # get 'pages/aboute' => 'high_voltage/pages#show', id: 'about'
+
   #
   # get 'users/index'
   #
