@@ -24,6 +24,7 @@ require 'zipcode_finder'
 
 class User < ActiveRecord::Base
   has_many :skills, dependent: :destroy
+  has_many :posts, dependent: :destroy
   has_one :wallet
 
   # has_many :generated_coupons, class_name: "Coupon", foreign_key: :generated_by_user_id

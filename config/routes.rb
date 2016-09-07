@@ -13,6 +13,7 @@ resources :users do
     resources :vibe_codes
   end
   resources :skills
+  resources :posts
 end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
