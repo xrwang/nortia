@@ -14,3 +14,56 @@
 .anonymous_pro {
   font-family: 'Anonymous Pro', sans-serif;
 }
+
+.row {
+  margin-left: 1em;
+}
+
+.jumbotron {
+  padding: 1.5em ;
+  padding-top: 2em;
+  margin-bottom: 0px;
+}
+
+.searchbar {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.left-skills {
+  border: 2px solid red;
+  border-radius: 15px;
+}
+
+.row-layouts {
+  // border: 1px solid blue;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 0px;
+}
+
+.row-layouts > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.box-inside {
+  border: 1px solid blue;
+  text-align: center;
+  vertical-align: middle;
+  padding: 1em;
+}
+.right-layout {
+  // border: 2px solid pink;
+  // border-radius: 15px;
+}
+
+#page-top {
+  // border: 1px solid green;
+  padding-bottom: 1em;
+  padding-top: 2em;
+}

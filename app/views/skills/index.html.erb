@@ -1,18 +1,56 @@
 <section id = "page-top">
-  <div class = "container-fluid col-xs-12 col-lg-8">
-    <!-- <h1>Skills#index</h1>
-    <p>Find me in app/views/skills/index.html.erb</p>
-    <br> -->
-    <h2>Skills Available</h2>
-    <br>
-    <%@skills_hash.each do |skill, users| %>
-        <h4><%=skill%></h4>
-        <ul>
-        <%users.compact.each do |user|%>
-          <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
-        <% end %>
-      </ul>
-        <br>
-    <% end %>
-  </div>
+  <div class="jumbotron">
+  <h1>Hello, world!</h1>
+  <p>...</p>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
 </section>
+<div class = "container-fluid">
+    <div class="row row-layouts">
+      <div class="col-md-4 left-skills">
+        <h2>Skills</h2>
+        <p>
+          <p><a class="btn btn-primary btn-sm" href="#" role="button">Browse by Skills</a></p>
+          <p><a class="btn btn-primary btn-sm" href="#" role="button">Browse by Posting</a></p>
+          <div class="col-md-8 searchbar">
+            <div class="input-group">
+               <input type="text" class="form-control" placeholder="Search for...">
+               <span class="input-group-btn">
+                 <button class="btn btn-default" type="button">Go!</button>
+               </span>
+            </div><!-- /input-group -->
+          </div>
+        </p>
+      </div>
+
+      <div class = "col-md-8 right-layout">
+        <!-- <h1>Skills#index</h1>
+        <p>Find me in app/views/skills/index.html.erb</p>
+        <br> -->
+        <div class="row row-layouts">
+          <%@skills_hash.each do |skill, users| %>
+          <div class="col-md-4 box-inside">
+              <h4><%=skill%></h4>
+          </div>
+
+          <% end %>
+
+        </div>
+        <br>
+
+
+        <!-- <%@skills_hash.each do |skill, users| %>
+        <div class="col-md-4">
+            <h4><%=skill%></h4>
+            <ul>
+            <%users.compact.each do |user|%>
+              <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
+            <% end %>
+          </ul>
+        <% end %>
+        </div> -->
+
+
+      </div>
+  </div>
+</div>
