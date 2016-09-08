@@ -1,8 +1,18 @@
+<script type="text/javascript">
+function toggle_visibility(id) {
+   var e = document.getElementById(id);
+   if(e.style.display == 'block')
+      e.style.display = 'none';
+   else
+      e.style.display = 'block';
+  }
+
+</script>
+
 <section id = "page-top">
   <div class="jumbotron">
   <h1>Hello, world!</h1>
-  <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <p>Hello, world!</p>
 </div>
 </section>
 <div class = "container-fluid">
@@ -29,15 +39,25 @@
         <br> -->
         <div class="row row-layouts">
           <%@skills_hash.each do |skill, users| %>
-          <div class="col-md-4 box-inside">
-              <h4><%=skill%></h4>
-          </div>
+              <div class="col-md-4 box-inside">
+                  <a href="#" onclick="toggle_visibility('<%=skill%>');">
+                  <h4><%=skill%></h4>
+                  </a>
+              </div>
+
+              <div id= '<%=skill%>' class='popout-top' style='display:none'>
+                <%users.compact.each do |user|%>
+                  <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
+                <% end %>
+                <li>Add yourself to this list</li>
+              </div>
 
           <% end %>
-
         </div>
-        <br>
 
+        <!-- <a href="javascript:ShowContent('uniquename')">
+        Click to show.
+        </a> -->
 
         <!-- <%@skills_hash.each do |skill, users| %>
         <div class="col-md-4">

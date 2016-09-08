@@ -4,7 +4,10 @@
 @import "creative";
 @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400italic,700,700italic);
 @import url(https://fonts.googleapis.com/css?family=Lato:400,400italic,300,100italic,100,300italic,700,700italic,900);
-
+html {
+  overflow-y : scroll;
+  overflow-x : hidden;
+}
 .center {
      float: none !important;
      margin-left: auto !important;
@@ -20,8 +23,8 @@
 }
 
 .jumbotron {
-  padding: 1.5em ;
-  padding-top: 2em;
+  padding: 2em ;
+  padding-top: 3em;
   margin-bottom: 0px;
 }
 
@@ -56,6 +59,11 @@
   text-align: center;
   vertical-align: middle;
   padding: 1em;
+  a{
+    padding: 0;
+    margin: 0;
+    background: black;
+  }
 }
 .right-layout {
   // border: 2px solid pink;
@@ -66,4 +74,9 @@
   // border: 1px solid green;
   padding-bottom: 1em;
   padding-top: 2em;
+}
+
+.popout-top {
+  border: 1px solid red;
+  width: 100%;
 }

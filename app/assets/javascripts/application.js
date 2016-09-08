@@ -17,4 +17,5 @@
 //= require bootstrap.min
 //= require creative
 //= require turbolinks
+//= require index
 //= require_tree .
