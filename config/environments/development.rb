@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  # or, if you're using better_errors:
+  config.middleware.insert_before Rack::Lock, Rack::LiveReload
+  # Specifying Rack::LiveReload options.
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.

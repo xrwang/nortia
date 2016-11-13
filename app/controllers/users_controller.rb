@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
   def show
     @skills = current_user.skills
+    @posts = current_user.posts
   end
 
 

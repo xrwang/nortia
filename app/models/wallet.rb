@@ -19,9 +19,9 @@ class Wallet < ActiveRecord::Base
   has_many :generated_coupons, :foreign_key => "giver_wallet_id", :class_name => "VibeCode"
   has_many :received_coupons, :foreign_key => "receiver_wallet_id", :class_name => "VibeCode"
 
-  # def balance_calculator
-  #   self.balance = wallet.received_coupons.credit_equiv
-  # end
+  def balance_calculator
+    self.balance = wallet.received_coupons.credit_equiv
+  end
 
 
 end

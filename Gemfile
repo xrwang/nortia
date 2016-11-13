@@ -33,6 +33,7 @@ gem 'httparty'
 #generate some unique coupon codes
 gem 'coupon_code'
 
+gem 'high_voltage', '~> 3.0.0'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -45,6 +46,8 @@ group :development, :test do
   gem 'better_errors'
   gem 'annotate'
   gem 'spring'
+  gem 'guard-livereload', '~> 2.5', require: false
+  gem 'rack-livereload'
 end
 
 group :production do

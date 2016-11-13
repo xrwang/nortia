@@ -1,0 +1,21 @@
+<section id = "page-top">
+  <div class = "container-fluid col-xs-12 col-lg-8">
+
+  <div class = "panel-heading"><h2>Add a post:</h2></div>
+      <%= simple_form_for([current_user, current_user.posts.build]) do |f| %>
+        <p>
+          <%=current_user.id%>
+          <%= f.input :title, label: 'post title', placeholder: 'art director advice wanted for disney short', as: :string %>
+        </p>
+        <p>
+          <%= f.input :body, label: 'more details', as: :text %>
+        </p>
+        <p>
+          <%= f.input :expiration, label: 'need by date', as: :date %>
+        </p>
+        <p>
+          <%= f.button :submit %>
+        </p>
+      <% end %>
+  </div>
+</section>

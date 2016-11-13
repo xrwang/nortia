@@ -13,9 +13,11 @@ resources :users do
     resources :vibe_codes
   end
   resources :skills
+  resources :posts
 end
   patch 'user/update', to: 'users#update'
   get 'user/show', to: 'users#show', as: 'show_profile'
+  get 'user/:user_id/post/:post_id', to: 'posts#show', as: 'show_post'
 
   get 'user/:id', to: 'users#show_other', as: 'show_other_profile'
 
@@ -31,7 +33,8 @@ end
   #
   # get 'static_pages/home'
   #
-  # get 'static_pages/test'
+  # get 'pages/aboute' => 'high_voltage/pages#show', id: 'about'
+
   #
   # get 'users/index'
   #
