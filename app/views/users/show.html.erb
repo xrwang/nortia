@@ -9,7 +9,7 @@
 </section>
 <div class = "container-fluid">
   <div class="row row-layouts">
-    <div class="col-md-4 left-skills span3 centering text-center">
+    <div class="col-md-4 left-dash span3 centering text-center">
       <%=image_tag(current_user.image_url, class: 'img-circle img-responsive', id: 'profile-pic')  %>
       <h4><%=current_user.name%></h4>
       <li><em>Name</em> <%=current_user.name%></li>
@@ -22,7 +22,8 @@
       <li><em>Latitude</em>  <%=current_user.location_lat%></li>
     </div>
 <!-- WALLET -->
-      <div class = "col-md-8 right-layout">
+      <div class = "col-md-8 right-layout-dash">
+          <h2>Wallet:</h2>
           <h4>Cha-ching! 💸 </h4>
           <%=current_user.wallet%>
           <h4>You've got <%=current_user.wallet.balance%> credits</h4>

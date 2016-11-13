@@ -1,11 +1,5 @@
 <script type="text/javascript">
-function toggle_visibility(id) {
-   var e = document.getElementById(id);
-   if(e.style.display == 'block')
-      e.style.display = 'none';
-   else
-      e.style.display = 'block';
-  }
+
 
 </script>
 
@@ -20,13 +14,13 @@ function toggle_visibility(id) {
       <div class="col-md-4 left-skills">
         <h2>Skills</h2>
         <p>
-          <p><a class="btn btn-primary btn-sm" href="#" role="button">Browse by Skills</a></p>
-          <p><a class="btn btn-primary btn-sm" href="#" role="button">Browse by Posting</a></p>
+          <p><a class="btn btn-primary btn-sm" onclick="toggle_visibility('listbyskill');" href="#" role="button">Browse by Skills</a></p>
+          <p><a class="btn btn-primary btn-sm" href="#" onclick="hide_it('listbyposting');" role="button">Browse by Posting</a></p>
           <div class="col-md-8 searchbar">
             <div class="input-group">
                <input type="text" class="form-control" placeholder="Search for...">
                <span class="input-group-btn">
-                 <button class="btn btn-default" type="button">Go!</button>
+                 <button class="btn btn-primary" type="button">Go!</button>
                </span>
             </div><!-- /input-group -->
           </div>
@@ -37,23 +31,36 @@ function toggle_visibility(id) {
         <!-- <h1>Skills#index</h1>
         <p>Find me in app/views/skills/index.html.erb</p>
         <br> -->
-        <div class="row row-layouts">
-          <%@skills_hash.each do |skill, users| %>
-              <div class="col-md-4 box-inside">
-                  <a href="#" onclick="toggle_visibility('<%=skill%>');">
-                  <h4><%=skill%></h4>
-                  </a>
-              </div>
-
-              <div id= '<%=skill%>' class='popout-top' style='display:none'>
-                <%users.compact.each do |user|%>
-                  <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
-                <% end %>
-                <li>Add yourself to this list</li>
-              </div>
-
-          <% end %>
+        <div id = "listbyposting" style='display:none'>
+          <div class="row row-layouts">
+              POSTINGSSSS
+          </div>
         </div>
+
+        <div id = "listbyskill" style='display:none'>
+          <div class="row row-layouts">
+              <%@skills_hash.each do |skill, users| %>
+                  <div class="col-md-4 box-inside">
+                      <a href="#" onclick="toggle_visibility('<%=skill%>');">
+                      <h4><%=skill%></h4>
+                      </a>
+                  </div>
+
+                  <div id= '<%=skill%>' class='popout-top' style='display:none'>
+                    <%users.compact.each do |user|%>
+                      <li><%=link_to "#{user.name}", show_other_profile_path(user.id)%></li>
+                    <% end %>
+                    <li>Add yourself to this list</li>
+                  </div>
+
+              <% end %>
+          </div>
+        </div>
+
+
+
+
+
 
         <!-- <a href="javascript:ShowContent('uniquename')">
         Click to show.
